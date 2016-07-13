@@ -1,1 +1,1 @@
-web: mvn exec:java
+web:    java -jar target/minitwit.jar
