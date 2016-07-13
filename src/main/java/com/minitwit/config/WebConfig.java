@@ -4,6 +4,7 @@ import static spark.Spark.before;
 import static spark.Spark.get;
 import static spark.Spark.halt;
 import static spark.Spark.post;
+import static spark.SparkBase.port;
 import static spark.SparkBase.staticFileLocation;
 
 import java.util.Date;
@@ -33,6 +34,7 @@ public class WebConfig {
 
 	public WebConfig(MiniTwitService service) {
 		this.service = service;
+		port(Integer.valueOf(System.getenv("PORT")));
 		staticFileLocation("/public");
 		setupRoutes();
 	}
