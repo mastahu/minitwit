@@ -34,7 +34,9 @@ public class WebConfig {
 
 	public WebConfig(MiniTwitService service) {
 		this.service = service;
-		port(Integer.valueOf(System.getenv("PORT")));
+		String port = System.getenv("PORT");
+		System.out.println("Setting port to be: " + port);
+		port(Integer.valueOf(port));
 		staticFileLocation("/public");
 		setupRoutes();
 	}
