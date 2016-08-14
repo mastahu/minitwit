@@ -24,15 +24,18 @@
     <ul class="messages">
     <#if messages??>
     <#list messages as message>
-		<li><img src="${message.gravatar}"><p>
+		<li><img src="${message.gravatar}"/>
+			<p>
 		<strong><a href="/t/${message.username}">${message.username}</a></strong>
 		${message.text}
 		<small>&mdash; ${message.pubDateStr}</small>
+			</p>
+		</li>
 	<#else>
-		<li><em>There're no messages so far.</em>
+		<li><em>There're no messages so far.</em></li>
 	</#list>
 	<#else>
-		<li><em>There're no messages so far.</em>
+		<li><em>There're no messages so far.</em></li>
 	</#if>
 	</ul>
 </@layout.masterTemplate>

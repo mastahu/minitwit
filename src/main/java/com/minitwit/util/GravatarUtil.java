@@ -25,7 +25,7 @@ public class GravatarUtil {
 	
 	public static String gravatarURL(String email, String defaultImage, int size) {
 		return String.format(
-					"http://www.gravatar.com/avatar/%s?d=%s&s=%d",
+					"http://www.gravatar.com/avatar/%s?d=%s&amp;s=%d",
 					md5Hex(email),
 					defaultImage,
 					size

@@ -73,6 +73,7 @@ public class WebConfig {
 		 * Displays the latest messages of all users.
 		 */
 		get("/public", (req, res) -> {
+			res.type("application/xhtml+xml");
 			User user = getAuthenticatedUser(req);
 			Map<String, Object> map = new HashMap<>();
 			map.put("pageTitle", "Public Timeline");
