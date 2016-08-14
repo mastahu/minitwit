@@ -1,4 +1,4 @@
-package com.minitwit.config;
+package com.minitwit.web;
 
 import static spark.Spark.before;
 import static spark.Spark.get;

@@ -4,7 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.minitwit.config.WebConfig;
+import com.minitwit.web.WebConfig;
 import com.minitwit.service.impl.MiniTwitService;
 
 @Configuration
