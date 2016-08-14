@@ -35,8 +35,10 @@ public class WebConfig {
 	public WebConfig(MiniTwitService service) {
 		this.service = service;
 		String port = System.getenv("PORT");
-		System.out.println("Setting port to be: " + port);
-		port(Integer.valueOf(port));
+		if(port != null) {
+			port(Integer.valueOf(port));
+			System.out.println("Setting port to be: " + port);
+		}
 		staticFileLocation("/public");
 		setupRoutes();
 	}
@@ -57,6 +59,7 @@ public class WebConfig {
 			map.put("messages", messages);
 			return new ModelAndView(map, "timeline.ftl");
         }, new FreeMarkerEngine());
+
 		before("/", (req, res) -> {
 			User user = getAuthenticatedUser(req);
 			if(user == null) {
